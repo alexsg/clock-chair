@@ -72,18 +72,19 @@ void forward_rotate()
   currentAngle = angleHigh;
   Serial.print("Current angle is: ");
   Serial.println(currentAngle);
-  //Serial.println("Time elapsed sitting is: " + elapsedTime);
+  Serial.println(lightLevel);
 }
 
 void backward_rotate()
 {
+  Serial.println(lightLevel);
   for(angle = currentAngle; angle > lowestAngle; angle--)    
   {                                
     servo.write(angle);           
     delay(60); // used to be 15      
   } 
   currentAngle = lowestAngle; // reset currentAngle
-  Serial.print("Reset back to starting position");
+  Serial.println("Reset back to starting position");
 }
 
 
